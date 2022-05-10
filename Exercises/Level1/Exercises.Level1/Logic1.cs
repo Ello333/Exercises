@@ -123,7 +123,12 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+
+        int sum = a + b;
+        if ((a + b < 10) || (a + b >= 19))
+        { return sum; }
+
+        return 20;
     }
 
     /// <summary>
@@ -153,7 +158,25 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        // 1. Ja 6 - true
+    
+        if (a==6 || b == 6)
+               
+        { return true; }
+
+        // 2. Ja atšķirība starp skaitļiem ir 6 - true
+
+        if (Math.Abs(a - b) == 6)
+            { return true; }
+            
+        if (Math.Abs(a + b) == 6)
+        { return true; }
+     
+        if (Math.Abs(b - a) != 6)
+        { return false;}
+        // 3. Visos citos gadījumos - false
+
+        return false;
     }
 
     /// <summary>
@@ -167,7 +190,61 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+
+        if (((n >= 1) && (n <= 10) && !outsideMode) || ((n < 1) && (n > 10) && outsideMode))
+        { return true; }
+
+      
+        ////if ((n <= 1) || (n >= 10))
+        //    if ((n < 1 && outsideMode)|| (n > 10 && outsideMode) || (n > 1 || n < 10))
+        //    { return false; }
+
+            //if ((n >= 1 || n <= 10) || (n <= 1 && outsideMode) || (n >= 10 && outsideMode))
+
+            //{ return true; }
+
+            //    //if ((n >= 1 || n <= 10))
+
+            //    //    return true;
+
+
+
+            //if ((n <= 1) || (n >= 10) && outsideMode)
+
+            //        return true;
+
+            //if ((n >= 1 || n <= 10) && outsideMode)
+            //        return false;
+
+
+
+
+
+
+            // if (((n >= 1) || (n <= 10)) || (((n <= 1) || (n >= 10)) && outsideMode))
+
+            // if ((n <= 1) || (n >= 10))
+            // { return false; }
+
+
+
+
+            //if (((n >= 1) || (n <= 10)) || (((n <= 1) || (n >= 10)) && outsideMode))
+
+            // { return true; }
+
+            // if ((n >= 1) || (n <= 10) && outsideMode)
+            //  { return false; }
+
+
+
+
+            // Ja 1 - 10 ieskaitot, tad true
+            // Ja visi citi izņemot 1- 10 ieskaitot + outsideMode = True
+            // Citos gadījuos true
+
+
+            return false;
     }
 
     /// <summary>
