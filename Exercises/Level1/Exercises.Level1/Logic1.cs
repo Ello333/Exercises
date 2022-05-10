@@ -77,7 +77,7 @@ public class Logic1
     {
         // 1. Ja t virs 60 un zem 90 tad atgriežam vērtību true
         if (temp < 60)
-            {
+        {
             return false;
         }
         int maxTemp = 90;
@@ -85,15 +85,15 @@ public class Logic1
         {
             maxTemp += 10;
         }
-     
+
 
         // 2. Ja temperatūra ir virs 60 un zem 100 un ir vasara, atgriežam vērtību true
         if (temp <= maxTemp)
-            {
+        {
             return true;
-                }
+        }
         // 3. Citādi false
-        
+
         return false;
     }
 
@@ -110,8 +110,23 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+        if (isBirthday)
+        {
+            speed -= 5;
+        }
+
+        if (speed <= 60)
+        {
+            return 0;
+        }
+
+        if (speed > 81)
+        { return 2; }
+
+        return 1;
     }
+
+
 
     /// <summary>
     /// Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are
@@ -143,8 +158,26 @@ public class Logic1
     /// alarmClock(0, false) → "10:00"
     /// </summary>
     public string AlarmClock(int day, bool vacation)
+
     {
-        throw new NotImplementedException();
+        string early = "7:00";
+        string late = "10:00";
+        string off = "off";
+
+        if (day == 0 || day == 6)
+        {
+
+            if (vacation)
+            { return off; }
+
+            return late;
+
+        }
+
+      if (vacation)
+        { return late; }
+
+        return early;
     }
 
     /// <summary>
@@ -159,24 +192,28 @@ public class Logic1
     public bool Love6(int a, int b)
     {
         // 1. Ja 6 - true
-    
-        if (a==6 || b == 6)
-               
+
+        if (a == 6 || b == 6)
+
         { return true; }
 
         // 2. Ja atšķirība starp skaitļiem ir 6 - true
 
-        if (Math.Abs(a - b) == 6)
-            { return true; }
-            
-        if (Math.Abs(a + b) == 6)
+      if(a + b == 6)
+        { return true;}
+
+      int subtracted = a - b;  
+
+        int diff = Math.Abs(subtracted);
+
+        if (diff == 6)
         { return true; }
-     
-        if (Math.Abs(b - a) != 6)
-        { return false;}
-        // 3. Visos citos gadījumos - false
+
+        // Visos citos gadījumos false
 
         return false;
+              
+   
     }
 
     /// <summary>
@@ -190,61 +227,18 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
+        if (outsideMode)
+        {
+            if (n <= 1 || n >= 10) return true;
 
-        if (((n >= 1) && (n <= 10) && !outsideMode) || ((n < 1) && (n > 10) && outsideMode))
-        { return true; }
+            else return false;
+        }
+        else
+        {
+            if (n >= 1 && n <= 10) return true;
 
-      
-        ////if ((n <= 1) || (n >= 10))
-        //    if ((n < 1 && outsideMode)|| (n > 10 && outsideMode) || (n > 1 || n < 10))
-        //    { return false; }
-
-            //if ((n >= 1 || n <= 10) || (n <= 1 && outsideMode) || (n >= 10 && outsideMode))
-
-            //{ return true; }
-
-            //    //if ((n >= 1 || n <= 10))
-
-            //    //    return true;
-
-
-
-            //if ((n <= 1) || (n >= 10) && outsideMode)
-
-            //        return true;
-
-            //if ((n >= 1 || n <= 10) && outsideMode)
-            //        return false;
-
-
-
-
-
-
-            // if (((n >= 1) || (n <= 10)) || (((n <= 1) || (n >= 10)) && outsideMode))
-
-            // if ((n <= 1) || (n >= 10))
-            // { return false; }
-
-
-
-
-            //if (((n >= 1) || (n <= 10)) || (((n <= 1) || (n >= 10)) && outsideMode))
-
-            // { return true; }
-
-            // if ((n >= 1) || (n <= 10) && outsideMode)
-            //  { return false; }
-
-
-
-
-            // Ja 1 - 10 ieskaitot, tad true
-            // Ja visi citi izņemot 1- 10 ieskaitot + outsideMode = True
-            // Citos gadījuos true
-
-
-            return false;
+            else return false;
+        }
     }
 
     /// <summary>
@@ -257,7 +251,13 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        throw new NotImplementedException();
+        if ((n == 11 % 2) || (n == 11 % 2 +1))
+        { return true; }
+
+
+
+        return false;
+
     }
 
     /// <summary>
@@ -324,7 +324,14 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum = a + b;
+
+        bool teen = (a >= 13 && a <= 19) || (b >= 13 && b <= 19);
+       
+        if (teen) 
+            { return sum=19; }
+        
+        else return sum;
     }
 
     /// <summary>
@@ -554,5 +561,5 @@ public class Logic1
     {
         throw new NotImplementedException();
     }
-}
 
+}
