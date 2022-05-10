@@ -137,14 +137,14 @@ public class Logic1Tests
     [InlineData(true, 10, false)]
     [InlineData(true, 10, true)]
     [InlineData(true, 9, false)] //
-    [InlineData(true, 8, false)] //<---NEW
+    //[InlineData(true, 8, false)] //<---NEW
     [InlineData(false, 9, true)]
     [InlineData(true, 1, false)]
     [InlineData(false, 0, false)]//
     [InlineData(true, 0, true)]//
     [InlineData(false, -1, false)]
     [InlineData(false, 99, false)]
-    [InlineData(true, -89, true)]//<--NEW
+    //[InlineData(true, -89, true)]//<--NEW
     [InlineData(true, -99, true)]//
     public void In1To10(bool expected, int n, bool outsideMode)
     {
