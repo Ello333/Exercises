@@ -19,7 +19,19 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
-        throw new NotImplementedException();
+       
+
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+        if (first == 6 || last == 6)
+        {
+            return true;
+        }
+
+        return false;
+
+
     }
 
     /// <summary>
@@ -32,7 +44,23 @@ public class Array1
     /// </summary>
     public bool SameFirstLast(int[] nums)
     {
-        throw new NotImplementedException();
+        if (nums.Length == 0)
+        {
+            return false;
+        }
+
+       
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+      
+        if (first == last)
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
     /// <summary>
@@ -42,7 +70,12 @@ public class Array1
     /// </summary>
     public int[] MakePi()
     {
-        throw new NotImplementedException();
+        {
+            int[] piArray = { 3, 1, 4 };
+
+            return piArray;
+        }
+
     }
 
     /// <summary>
@@ -55,7 +88,18 @@ public class Array1
     /// </summary>
     public bool CommonEnd(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+        int aFirst = a[0];
+        int aLast = a[a.Length - 1];
+        int bFirst = b[0];
+        int bLast = b[b.Length - 1];
+
+        if (aFirst == bFirst || aLast == bLast)
+        {
+            return true;
+        }
+
+        return false;
+
     }
 
     /// <summary>
@@ -67,7 +111,16 @@ public class Array1
     /// </summary>
     public int Sum3(int[] nums)
     {
-        throw new NotImplementedException();
+        int sum = 0;
+       
+        foreach (int num in nums)
+        {
+           
+            sum += num;
+        }
+
+        return sum;
+
     }
 
     /// <summary>
@@ -80,7 +133,10 @@ public class Array1
     /// </summary>
     public int[] RotateLeft3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] newOrder = { nums[1], nums[2], nums[0] };
+
+        return newOrder;
+
     }
 
     /// <summary>
@@ -93,7 +149,9 @@ public class Array1
     /// </summary>
     public int[] Reverse3(int[] nums)
     {
-        throw new NotImplementedException();
+        int[] newOrder = { nums[2], nums[1], nums[0] };
+
+        return newOrder;
     }
 
     /// <summary>
@@ -106,21 +164,56 @@ public class Array1
     /// </summary>
     public int[] MaxEnd3(int[] nums)
     {
-        throw new NotImplementedException();
+        int first = nums[0];
+        int last = nums[nums.Length - 1];
+
+        int biggest = first;
+
+        if (first < last)
+        {
+            biggest = last;
+        }
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = biggest;
+
+
+        }
+
+        return nums;
+
     }
 
-    /// <summary>
-    /// Given an array of ints, return the sum of the first 2 elements in the array. If the array
-    /// length is less than 2, just sum up the elements that exist, returning 0 if the array is length
-    /// 0.
-    /// 
-    /// sum2([1, 2, 3]) → 3
-    /// sum2([1, 1]) → 2
-    /// sum2([1, 1, 1, 1]) → 2
-    /// </summary>
-    public int Sum2(int[] nums)
+        /// <summary>
+        /// Given an array of ints, return the sum of the first 2 elements in the array. If the array
+        /// length is less than 2, just sum up the elements that exist, returning 0 if the array is length
+        /// 0.
+        /// 
+        /// sum2([1, 2, 3]) → 3
+        /// sum2([1, 1]) → 2
+        /// sum2([1, 1, 1, 1]) → 2
+        /// </summary>
+        public int Sum2(int[] nums)
     {
-        throw new NotImplementedException();
+        int a = nums[0];
+        int b = nums[1];
+        bool c = nums[0 + nums.Length -1] > 2;
+        
+
+       int sum = a + b;
+        
+        if (nums.Length == -1)
+        {
+            return 0;
+        }
+
+       //if (nums.Length == 1)
+       // {
+       //     return sum;
+       // }
+     
+
+        return sum;
     }
 
     /// <summary>
@@ -133,7 +226,14 @@ public class Array1
     /// </summary>
     public int[] MiddleWay(int[] a, int[] b)
     {
-        throw new NotImplementedException();
+       int[] newA = { a[0], a[1], a[2] };
+       int[] newB = { b[0], b[1], b[2] };
+       
+       int[] c = { a[1], b[1] };
+
+        return c;
+    
+       
     }
 
     /// <summary>
